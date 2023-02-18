@@ -58,6 +58,8 @@ typings/
 .cache/
 public
 
+src/config
+
 # Mac files
 .DS_Store
 

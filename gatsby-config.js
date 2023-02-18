@@ -1,3 +1,11 @@
+/*
+ * @Author       : Pear107
+ * @Date         : 2023-02-11 23:32:17
+ * @LastEditors  : Pear107
+ * @LastEditTime : 2023-02-16 22:24:54
+ * @FilePath     : \q-video\gatsby-config.js
+ * @Description  : 头部注释
+ */
 /**
  * Configure your Gatsby site with this file.
  *
@@ -9,10 +17,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: "Fan Li",
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -39,5 +44,26 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-  ],
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        lessOptions: {
+          modifyVars: {
+            "primary-color": "#1DA57A",
+            "link-color": "#1DA57A",
+          },
+          javascriptEnabled: true,
+        },
+      },
+    },
+    "gatsby-plugin-postcss",
+  ]
 }

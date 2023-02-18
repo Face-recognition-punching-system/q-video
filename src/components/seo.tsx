@@ -1,3 +1,11 @@
+/*
+ * @Author       : Pear107
+ * @Date         : 2023-02-11 23:32:17
+ * @LastEditors  : Pear107
+ * @LastEditTime : 2023-02-12 00:02:09
+ * @FilePath     : \q-video\src\components\seo.tsx
+ * @Description  : 头部注释
+ */
 /**
  * SEO component that queries for data with
  * Gatsby's useStaticQuery React hook
@@ -8,7 +16,15 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children }) {
+function Seo({
+  description,
+  title,
+  children,
+}: {
+  description?: string
+  title?: string
+  children?: any
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
