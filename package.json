@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "q-video",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Web 摄像头",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pear107",
   "dependencies": {
     "@techstark/opencv-js": "^4.6.0-release.1",
     "@tensorflow/tfjs-core": "^4.2.0",
@@ -69,5 +69,10 @@
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
-  }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
 }
