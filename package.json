@@ -29,6 +29,8 @@
     "trtc-js-sdk": "^4.15.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",
     "@types/react": "^18.0.28",
@@ -36,6 +38,7 @@
     "autoprefixer": "^10.4.13",
     "cz-customizable": "^6.3.0",
     "gatsby-plugin-postcss": "^6.6.0",
+    "husky": "^7.0.1",
     "jest": "^29.4.3",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
