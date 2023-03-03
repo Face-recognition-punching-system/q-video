@@ -1,7 +1,7 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1 align="center">
   Gatsby's default starter
 </h1>
+
 ## 🚀 快速开始
 
 ### 环境
