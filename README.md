@@ -2,7 +2,7 @@
 <h1 align="center">
   Gatsby's default starter
 </h1>
-# 🚀 快速开始
+## 🚀 快速开始
 
 ### 环境
 
