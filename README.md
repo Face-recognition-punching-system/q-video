@@ -44,42 +44,50 @@ npm run test
 ## 🌲 目录树
 
 ```text
-.
-├── .prettierignore
-├── .prettierrc
+├── .eslintrc.json
 ├── .vscode/
 |  └── settings.json
-├── gatsby-browser.js
-├── gatsby-config.js
-├── gatsby-node.js
-├── gatsby-ssr.js
-├── LICENSE
+├── next-env.d.ts
+├── next.config.js
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.js
 ├── README.md
 ├── src/
-|  ├── components/
-|  |  └── seo.tsx
-|  ├── images/
-|  |  ├── example.png
-|  |  └── gatsby-icon.png
-|  ├── libs/
+|  ├── layouts/
+|  |  └── indexLayout.tsx
 |  ├── pages/
 |  |  ├── 404.tsx
+|  |  ├── api/
+|  |  ├── auth/
+|  |  ├── dist/
+|  |  ├── feedback.tsx
 |  |  ├── index.tsx
-|  |  └── video.tsx
+|  |  ├── workerInfo.tsx
+|  |  ├── _app.tsx
+|  |  ├── _document.tsx
+|  |  └── _error.tsx
+|  ├── plugins/
+|  ├── public/
+|  |  ├── logo.ico
+|  |  └── svgs/
 |  ├── styles/
-|  |  ├── global.less
-|  |  └── pages/
-|  ├── templates/
-|  |  └── using-dsg.tsx
-|  ├── typings/
-|  |  └── css.d.ts
+|  |  ├── base.less
+|  |  ├── border.less
+|  |  ├── color.less
+|  |  ├── default.less
+|  |  ├── distance.less
+|  |  ├── flex.less
+|  |  ├── font.less
+|  |  ├── index.less
+|  |  ├── normalize.less
+|  |  ├── position.less
+|  |  ├── size.less
+|  |  └── theme.less
 |  └── utils/
 |     └── axios.ts
 ├── tailwind.config.js
-├── test/
-└── tsconfig.json
+├── tsconfig.json
+└── yarn.lock
 ```
 
