@@ -41,3 +41,45 @@ npm run build
 npm run test
 ```
 
+## 🌲 目录树
+
+```text
+.
+├── .prettierignore
+├── .prettierrc
+├── .vscode/
+|  └── settings.json
+├── gatsby-browser.js
+├── gatsby-config.js
+├── gatsby-node.js
+├── gatsby-ssr.js
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── src/
+|  ├── components/
+|  |  └── seo.tsx
+|  ├── images/
+|  |  ├── example.png
+|  |  └── gatsby-icon.png
+|  ├── libs/
+|  ├── pages/
+|  |  ├── 404.tsx
+|  |  ├── index.tsx
+|  |  └── video.tsx
+|  ├── styles/
+|  |  ├── global.less
+|  |  └── pages/
+|  ├── templates/
+|  |  └── using-dsg.tsx
+|  ├── typings/
+|  |  └── css.d.ts
+|  └── utils/
+|     └── axios.ts
+├── tailwind.config.js
+├── test/
+└── tsconfig.json
+```
+
