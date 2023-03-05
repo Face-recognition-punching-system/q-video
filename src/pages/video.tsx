@@ -2,7 +2,7 @@
  * @Author       : Pear107
  * @Date         : 2023-02-12 00:20:19
  * @LastEditors  : Pear107
- * @LastEditTime : 2023-03-03 08:26:31
+ * @LastEditTime : 2023-03-05 21:04:20
  * @FilePath     : \q-video\src\pages\video.tsx
  * @Description  : 头部注释
  */
@@ -18,7 +18,7 @@ import cv, {
 
 import Seo from "../components/seo"
 import * as styles from "../styles/pages/video.module.less"
-import { axiosPost } from "../utils/axios"
+import axios from "axios"
 
 let timer: any
 let debounce: any
@@ -67,8 +67,9 @@ const Video = () => {
       cv.cvtColor(mat, gray, cv.COLOR_RGBA2GRAY, 0)
       const faces: RectVector = new cv.RectVector()
       faceCascade.detectMultiScale(gray, faces, 1.1, 3, 0, msize, msize)
+      cv.imshow(canvasRef.current, mat)
       if (faces.size() > 1) {
-        messageApi.open({ type: "error", content: "人数过多" })
+        // messageApi.open({ type: "error", content: "人数过多" })
       } else if (faces.size() === 1) {
         // for (let i = 0; i < faces.size(); ++i) {
         // const point1 = new cv.Point(faces.get(i).x, faces.get(i).y)
@@ -80,23 +81,33 @@ const Video = () => {
         // const face: Mat = gray.roi(faces.get(i))
         // cv.resize(face, face, size, 0, 0, cv.INTER_AREA)
         // }
-        cv.imshow(canvasRef.current, mat)
-        
-        const base64 = canvasRef.current.toDataURL().replace(/^data:image\/\w+;base64,/, "")
+
+        const base64 = canvasRef.current
+          .toDataURL()
+          .replace(/^data:image\/\w+;base64,/, "")
         if (!debounce) {
-          console.log(base64)
           debounce = setTimeout(() => {
             clearTimeout(debounce)
+            console.log("hello world")
+            axios
+              .post("http://localhost:8888/video/reco", { img: base64 })
+              .then(res => {
+                console.log(res.data)
+              })
+              .catch(reason => {
+                console.log(reason)
+              })
             debounce = null
-          }, 2000)
+          }, 5000)
         }
-      } else {
-        cv.imshow(canvasRef.current, mat)
       }
 
       faces.delete()
     } catch (error: any) {
       console.log(error)
+      clearTimeout(timer)
+      setIsConn(false)
+      trackRef.current?.stop()
     }
   }
 
@@ -130,7 +141,7 @@ const Video = () => {
   React.useEffect(() => {
     loadDataFile(
       "/haarcascade_frontalface_default.xml",
-      "/models/haarcascade_frontalface_default.xml"
+      "/modules/haarcascade_frontalface_default.xml"
     )
 
     if (videoRef.current) {

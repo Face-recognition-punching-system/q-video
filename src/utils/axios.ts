@@ -2,14 +2,15 @@
  * @Author       : Pear107
  * @Date         : 2023-02-12 13:56:12
  * @LastEditors  : Pear107
- * @LastEditTime : 2023-02-12 14:50:24
+ * @LastEditTime : 2023-03-05 20:50:01
  * @FilePath     : \q-video\src\utils\axios.ts
  * @Description  : 头部注释
  */
 import axios from "axios"
 import { InternalAxiosRequestConfig, AxiosResponse } from "axios"
 
-const baseUrl = "https://yearr107.top/api"
+// const baseUrl = "https://yearr107.top/api"
+const baseUrl = "http://localhost:8888"
 // 添加请求拦截器
 axios.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
